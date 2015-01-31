@@ -23,7 +23,7 @@ window.onload = function()
         game.load.spritesheet( 'girlChar', 'assets/ExGirl.png', 40, 40, 12 );
     }
     
-    var bouncy;
+   // var bouncy;
     
     
     function create() 
@@ -46,7 +46,7 @@ window.onload = function()
         girl.animations.add('up', [6, 7, 8], 10, true);
         girl.animations.add('right', [9, 10, 11], 10, true);
         
-        girl.body.gravity.y = 300;
+     //   girl.body.gravity.y = 300;
         
     //    cursors = game.input.keyboard.createCursorKeys();
         
@@ -72,7 +72,8 @@ window.onload = function()
      //   bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );\
         
          cursors = game.input.keyboard.createCursorKeys();
-         
+        
+         girl.body.gravity.y = 300; 
          girl.body.velocity.x = 0;
          
          if (cursors.left.isDown)
@@ -96,10 +97,10 @@ window.onload = function()
         }
         
         //  Allow the player to jump if they are touching the ground.
-        if (cursors.up.isDown && player.body.touching.down)
+       /* if (cursors.up.isDown && player.body.touching.down)
         {
             player.body.velocity.y = -350;
-        }
+        } */
              
      }
 };
