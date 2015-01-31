@@ -17,22 +17,34 @@ window.onload = function() {
     
     function preload() {
         // Load an image and call it 'logo'.
-        game.load.image( 'logo', 'assets/phaser.png' );
+    //    game.load.image( 'logo', 'assets/phaser.png' );
+        game.load.spritesheet( 'girlChar', 'assets/GirlLightExample.png', 40, 40, 12 );
     }
     
     var bouncy;
     
-    function create() {
+    
+    function create() 
+    {
+        var girl;
+        
+        
+        
         // Create a sprite at the center of the screen using the 'logo' image.
         bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'logo' );
         // Anchor the sprite at its center, as opposed to its top-left corner.
         // so it will be truly centered.
         bouncy.anchor.setTo( 0.5, 0.5 );
         
+        girl = game.add.sprite(game.world.centerX, game.world.centerY, 'girlChar');
+        sprite.animations.add('walk');
+        sprite.animations.play('walk', 50, true);
+        game.add.tween(girl).to({ x: game.width }, 10000, Phaser.Easing.Linear.None, true);
+        
         // Turn on the arcade physics engine for this sprite.
-        game.physics.enable( bouncy, Phaser.Physics.ARCADE );
+    //    game.physics.enable( bouncy, Phaser.Physics.ARCADE );
         // Make it bounce off of the world bounds.
-        bouncy.body.collideWorldBounds = true;
+     //   bouncy.body.collideWorldBounds = true;
         
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
@@ -47,6 +59,12 @@ window.onload = function() {
         // in X or Y.
         // This function returns the rotation angle that makes it visually match its
         // new trajectory.
-        bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
+     //   bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );\
+        
+         if (girl.x >= 300)
+         {
+            girl.scale.x += 0.01;
+            girl.scale.y += 0.01;
+         }
     }
 };
