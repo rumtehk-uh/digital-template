@@ -20,7 +20,7 @@ window.onload = function()
     {
         // Load an image and call it 'logo'.
     //    game.load.image( 'logo', 'assets/phaser.png' );
-        game.load.spritesheet( 'girlChar', 'assets/GirlLightExample.png', 40, 40, 12 );
+        game.load.spritesheet( 'girlChar', 'assets/ExGirl.png', 40, 40, 12 );
     }
     
     var bouncy;
