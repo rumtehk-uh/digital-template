@@ -23,7 +23,7 @@ window.onload = function()
         game.load.spritesheet( 'girlChar', 'assets/ExGirl.png', 40, 40, 12 );
     }
     
-    var bouncy;
+   // var bouncy;
     
     
     function create() 
@@ -33,10 +33,10 @@ window.onload = function()
         
         
         // Create a sprite at the center of the screen using the 'logo' image.
-        bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'logo' );
+      //  bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'logo' );
         // Anchor the sprite at its center, as opposed to its top-left corner.
         // so it will be truly centered.
-        bouncy.anchor.setTo( 0.5, 0.5 );
+      //  bouncy.anchor.setTo( 0.5, 0.5 );
         
         girl = game.add.sprite(game.world.centerX, game.world.centerY, 'girlChar');
         girl.animations.add('left', [0, 1, 2], 10, true);
