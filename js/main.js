@@ -46,7 +46,7 @@ window.onload = function()
         girl.animations.add('up', [6, 7, 8], 10, true);
         girl.animations.add('right', [9, 10, 11], 10, true);
         
-     //   girl.body.gravity.y = 300;
+        girl.body.gravity.y = 300;
         
     //    cursors = game.input.keyboard.createCursorKeys();
         
@@ -73,7 +73,7 @@ window.onload = function()
         
          cursors = game.input.keyboard.createCursorKeys();
         
-         girl.body.gravity.y = 300; 
+        // girl.body.gravity.y = 300; 
          girl.body.velocity.x = 0;
          
          if (cursors.left.isDown)
