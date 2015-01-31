@@ -1,4 +1,5 @@
-window.onload = function() {
+window.onload = function() 
+{
     // You might want to start with a template that uses GameStates:
     //     https://github.com/photonstorm/phaser/tree/master/resources/Project%20Templates/Basic
     
@@ -15,10 +16,11 @@ window.onload = function() {
     
     var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
     
-    function preload() {
+    function preload() 
+    {
         // Load an image and call it 'logo'.
     //    game.load.image( 'logo', 'assets/phaser.png' );
-        game.load.spritesheet( 'girlChar', 'assets/GirlLightExample.png', 40, 40, 3 );
+        game.load.spritesheet( 'girlChar', 'assets/GirlLightExample.png', 40, 40, 12 );
     }
     
     var bouncy;
@@ -37,9 +39,16 @@ window.onload = function() {
         bouncy.anchor.setTo( 0.5, 0.5 );
         
         girl = game.add.sprite(game.world.centerX, game.world.centerY, 'girlChar');
-        sprite.animations.add('walk');
-        sprite.animations.play('walk', 50, true);
-        game.add.tween(girl).to({ x: game.width }, 10000, Phaser.Easing.Linear.None, true);
+        girl.animations.add('walk');
+        girl.animations.play('walk', 50, true);
+        girl.animations.add('left', [0, 1, 2], 10, true);
+        girl.animations.add('down', [3, 4, 5], 10, true);
+        girl.animations.add('up', [6, 7, 8], 10, true);
+        girl.animations.add('right', [9, 10, 11], 10, true);
+        
+        girl.body.gravity.y = 300;
+        
+    //    cursors = game.input.keyboard.createCursorKeys();
         
         // Turn on the arcade physics engine for this sprite.
     //    game.physics.enable( bouncy, Phaser.Physics.ARCADE );
@@ -53,7 +62,8 @@ window.onload = function() {
         text.anchor.setTo( 0.5, 0.0 );
     }
     
-    function update() {
+    function update() 
+    {
         // Accelerate the 'logo' sprite towards the cursor,
         // accelerating at 500 pixels/second and moving no faster than 500 pixels/second
         // in X or Y.
@@ -61,10 +71,35 @@ window.onload = function() {
         // new trajectory.
      //   bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );\
         
-         if (girl.x >= 300)
+         cursors = game.input.keyboard.createCursorKeys();
+         
+         girl.body.velocity.x = 0;
+         
+         if (cursors.left.isDown)
          {
-            girl.scale.x += 0.01;
-            girl.scale.y += 0.01;
+        //  Move to the left
+             player.body.velocity.x = -150;
+             player.animations.play('left');
+             
          }
-    }
+        else if (cursors.right.isDown)
+        {
+            //  Move to the right
+            player.body.velocity.x = 150;
+            player.animations.play('right');
+        }
+        else
+        {
+            //  Stand still
+            player.animations.stop();
+            player.frame = 4;
+        }
+        
+        //  Allow the player to jump if they are touching the ground.
+        if (cursors.up.isDown && player.body.touching.down)
+        {
+            player.body.velocity.y = -350;
+        }
+             
+     }
 };
