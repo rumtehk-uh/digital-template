@@ -46,6 +46,9 @@ window.onload = function()
         
         girl.body.gravity.y = 300;
         
+        cursors = game.input.keyboard.createCursorKeys();
+
+        
     //    cursors = game.input.keyboard.createCursorKeys();
         
         // Turn on the arcade physics engine for this sprite.
@@ -69,7 +72,7 @@ window.onload = function()
         // new trajectory.
      //   bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );\
         
-         cursors = game.input.keyboard.createCursorKeys();
+      //   cursors = game.input.keyboard.createCursorKeys();
         
         // girl.body.gravity.y = 300; 
          girl.body.velocity.x = 0;
