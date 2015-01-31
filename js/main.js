@@ -23,7 +23,7 @@ window.onload = function()
         game.load.spritesheet( 'girlChar', 'assets/ExGirl.png', 40, 40, 12 );
     }
     
-   // var bouncy;
+    var bouncy;
     
     
     function create() 
@@ -39,8 +39,6 @@ window.onload = function()
         bouncy.anchor.setTo( 0.5, 0.5 );
         
         girl = game.add.sprite(game.world.centerX, game.world.centerY, 'girlChar');
-        girl.animations.add('walk');
-        girl.animations.play('walk', 50, true);
         girl.animations.add('left', [0, 1, 2], 10, true);
         girl.animations.add('down', [3, 4, 5], 10, true);
         girl.animations.add('up', [6, 7, 8], 10, true);
