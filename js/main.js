@@ -20,7 +20,7 @@ window.onload = function()
     {
         // Load an image and call it 'logo'.
     //    game.load.image( 'logo', 'assets/phaser.png' );
-        game.load.spritesheet( 'girlChar', 'assets/ExGirl.png', 40, 40, 11 );
+        game.load.spritesheet( 'girlChar', 'assets/ExGirl.png', 40, 40, 12 );
     }
     
    // var bouncy;
@@ -54,9 +54,7 @@ window.onload = function()
         
         walkRight.play('right', true);
         
-        girl.body.gravity.y = 300;
-        
-        cursors = game.input.keyboard.createCursorKeys();
+      //  girl.body.gravity.y = 300;
 
         
     //    cursors = game.input.keyboard.createCursorKeys();
@@ -66,11 +64,6 @@ window.onload = function()
         // Make it bounce off of the world bounds.
      //   bouncy.body.collideWorldBounds = true;
         
-        // Add some text using a CSS style.
-        // Center it in X, and position its top 15 pixels from the top of the world.
-        var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
-        var text = game.add.text( game.world.centerX, 15, "Build something awesome.", style );
-        text.anchor.setTo( 0.5, 0.0 );
     }
     
     function animationStarted(sprite, animation) 
