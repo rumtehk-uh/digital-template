@@ -46,13 +46,13 @@ window.onload = function()
         girl.animations.add('left', [0, 1, 2], 10, true);
         girl.animations.add('down', [3, 4, 5], 10, true);
         girl.animations.add('up', [6, 7, 8], 10, true);
-        walkRight = girl.animations.add('right', [9, 10, 11], 10, true);
+        walkRight = girl.animations.add('right');
         
         walkRight.onStart.add(animationStarted, this);
         walkRight.onLoop.add(animationLooped, this);
 
         
-        walkRight.play('right', true);
+        walkRight.play('right', 10, true);
         
         girl.body.gravity.y = 300;
         
@@ -73,26 +73,23 @@ window.onload = function()
         text.anchor.setTo( 0.5, 0.0 );
     }
     
-    function animationStarted(sprite, animation) {
-
+    function animationStarted(sprite, animation) 
+    {
     game.add.text(32, 32, 'Animation started', { fill: 'white' });
-
-}
-
-function animationLooped(sprite, animation) 
-{
-
-    if (animation.loopCount === 1)
-    {
-        loopText = game.add.text(32, 64, 'Animation looped', { fill: 'white' });
-    }
-    else
-    {
-        loopText.text = 'Animation looped x2';
-        animation.loop = false;
     }
 
-}
+    function animationLooped(sprite, animation) 
+    {
+        if (animation.loopCount === 1)
+        {
+            loopText = game.add.text(32, 64, 'Animation looped', { fill: 'white' });
+        }
+        else
+        {
+            loopText.text = 'Animation looped x2';
+            animation.loop = false;
+        }
+    }
 
     
     function update() 
