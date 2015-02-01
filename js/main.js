@@ -16,11 +16,13 @@ window.onload = function()
     
     var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
     
+    var girl;
+    
     function preload() 
     {
         // Load an image and call it 'logo'.
     //    game.load.image( 'logo', 'assets/phaser.png' );
-        game.load.spritesheet( 'girlChar', 'assets/ExGirl.png', 40, 40, 12 );
+        game.load.spritesheet('girlChar', 'assets/ExGirl.png', 40, 40, 12 );
     }
     
    // var bouncy;
@@ -28,8 +30,8 @@ window.onload = function()
     
     function create() 
     {
-        var girl;
-        var walkRight;
+        //var girl;
+    //    var walkRight;
     //    game.physics.startSystem(Phaser.Physics.ARCADE);
     //    girl.enableBody = true;
     //    game.physics.arcade.enable(girl);
@@ -42,17 +44,18 @@ window.onload = function()
       //  bouncy.anchor.setTo( 0.5, 0.5 );
         
         girl = game.add.sprite(game.world.centerX, game.world.centerY, 'girlChar');
-        girl.scale.set(4);
+        girl.scale.set(3);
         girl.animations.add('left', [0, 1, 2], 10, true);
         girl.animations.add('down', [3, 4, 5], 10, true);
         girl.animations.add('up', [6, 7, 8], 10, true);
-        walkRight = girl.animations.add('right', [9, 10, 11], 10, true);
+        girl.animations.add('right', [9, 10, 11], 10, true);
         
-        walkRight.onStart.add(animationStarted, this);
-        walkRight.onLoop.add(animationLooped, this);
+       // walkRight.onStart.add(animationStarted, this);
+       // walkRight.onLoop.add(animationLooped, this);
+       girl.animations.play('right', 10, true);
 
         
-        walkRight.play('right', true);
+        //walkRight.play('right', true);
         
       //  girl.body.gravity.y = 300;
 
@@ -66,7 +69,7 @@ window.onload = function()
         
     }
     
-    function animationStarted(sprite, animation) 
+  /*  function animationStarted(sprite, animation) 
     {
         game.add.text(32, 32, 'Animation started', { fill: 'white' });
     }
@@ -82,7 +85,7 @@ window.onload = function()
             loopText.text = 'Animation looped x2';
             animation.loop = false;
         }
-    }
+    } */
 
     
     function update() 
@@ -94,13 +97,13 @@ window.onload = function()
         // new trajectory.
      //   bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );\
         
-         cursors = game.input.keyboard.createCursorKeys();
+       //  cursors = game.input.keyboard.createCursorKeys();
         
         // girl.body.gravity.y = 300; 
-         girl.body.velocity.x = 0;
+      //   girl.body.velocity.x = 0;
          
          
-         if (cursors.left.isDown)
+      /*   if (cursors.left.isDown)
          {
         //  Move to the left
              player.body.velocity.x = -150;
@@ -118,7 +121,7 @@ window.onload = function()
             //  Stand still
             player.animations.stop();
             player.frame = 5;
-        }
+        } */
         
         //  Allow the player to jump if they are touching the ground.
        /* if (cursors.up.isDown && player.body.touching.down)
