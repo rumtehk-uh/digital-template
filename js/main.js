@@ -20,7 +20,7 @@ window.onload = function()
     {
         // Load an image and call it 'logo'.
     //    game.load.image( 'logo', 'assets/phaser.png' );
-        game.load.spritesheet( 'girlChar', 'assets/ExGirl.png', 40, 40, 12 );
+        game.load.spritesheet( 'girlChar', 'assets/ExGirl.png', 40, 40, 11 );
     }
     
    // var bouncy;
@@ -46,13 +46,13 @@ window.onload = function()
         girl.animations.add('left', [0, 1, 2], 10, true);
         girl.animations.add('down', [3, 4, 5], 10, true);
         girl.animations.add('up', [6, 7, 8], 10, true);
-        walkRight = girl.animations.add('right');
+        walkRight = girl.animations.add('right', [9, 10, 11], 10, true);
         
         walkRight.onStart.add(animationStarted, this);
         walkRight.onLoop.add(animationLooped, this);
 
         
-        walkRight.play('right', 10, true);
+        walkRight.play('right', true);
         
         girl.body.gravity.y = 300;
         
