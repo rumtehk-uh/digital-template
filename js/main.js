@@ -45,9 +45,9 @@ window.onload = function()
         girl.animations.add('left', [0, 1, 2], 10, true);
         girl.animations.add('down', [3, 4, 5], 10, true);
         girl.animations.add('up', [6, 7, 8], 10, true);
-        girl.animations.add('right', [9, 10, 11], 10, true);
+        girl.animations.add('right');
         
-        girl.animations.play('right', 50, true);
+        girl.animations.play('right', 5, true);
         
         girl.body.gravity.y = 300;
         
