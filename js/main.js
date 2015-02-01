@@ -80,6 +80,8 @@ window.onload = function()
         // girl.body.gravity.y = 300; 
          girl.body.velocity.x = 0;
          
+         sprite.animations.play('right', 50, true);
+         
          if (cursors.left.isDown)
          {
         //  Move to the left
