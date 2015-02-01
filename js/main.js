@@ -29,7 +29,7 @@ window.onload = function()
     function create() 
     {
         var girl;
-        
+        var walkRight;
     //    game.physics.startSystem(Phaser.Physics.ARCADE);
     //    girl.enableBody = true;
     //    game.physics.arcade.enable(girl);
@@ -42,12 +42,17 @@ window.onload = function()
       //  bouncy.anchor.setTo( 0.5, 0.5 );
         
         girl = game.add.sprite(game.world.centerX, game.world.centerY, 'girlChar');
+        girl.scale.set(4);
         girl.animations.add('left', [0, 1, 2], 10, true);
         girl.animations.add('down', [3, 4, 5], 10, true);
         girl.animations.add('up', [6, 7, 8], 10, true);
-        girl.animations.add('right');
+        walkRight = girl.animations.add('right', [9, 10, 11], 10, true);
         
-        girl.animations.play('right', 5, true);
+        walkRight.onStart.add(animationStarted, this);
+        walkRight.onLoop.add(animationLooped, this);
+
+        
+        walkRight.play('right', true);
         
         girl.body.gravity.y = 300;
         
@@ -67,6 +72,28 @@ window.onload = function()
         var text = game.add.text( game.world.centerX, 15, "Build something awesome.", style );
         text.anchor.setTo( 0.5, 0.0 );
     }
+    
+    function animationStarted(sprite, animation) {
+
+    game.add.text(32, 32, 'Animation started', { fill: 'white' });
+
+}
+
+function animationLooped(sprite, animation) 
+{
+
+    if (animation.loopCount === 1)
+    {
+        loopText = game.add.text(32, 64, 'Animation looped', { fill: 'white' });
+    }
+    else
+    {
+        loopText.text = 'Animation looped x2';
+        animation.loop = false;
+    }
+
+}
+
     
     function update() 
     {
