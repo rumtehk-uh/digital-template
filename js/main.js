@@ -30,7 +30,10 @@ window.onload = function()
     {
         var girl;
         
-        
+        game.physics.startSystem(Phaser.Physics.ARCADE);
+        girl.enableBody = true;
+        game.physics.arcade.enable(girl);
+        player.body.collideWorldBounds = true;
         
         // Create a sprite at the center of the screen using the 'logo' image.
       //  bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'logo' );
@@ -94,7 +97,7 @@ window.onload = function()
         {
             //  Stand still
             player.animations.stop();
-            player.frame = 4;
+            player.frame = 5;
         }
         
         //  Allow the player to jump if they are touching the ground.
