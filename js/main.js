@@ -45,7 +45,7 @@ window.onload = function()
         ground.scale.setTo(2,2);
         //ground.body.immoveable = true;
         
-        ledge = platforms.create(400, 400, 'ground');
+        ledge = platforms.create(400, 400, 'plain brick');
         //ledge.body.immoveable = true;
     
         
