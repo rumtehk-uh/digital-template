@@ -41,11 +41,11 @@ window.onload = function()
         platforms.enableBody = true;
         var ground = platforms.create(0, game.world.height - 64, 'plainBrick');
         ground.scale.setTo(8,1);
-        ground.body.immoveable = true;
+        ground.body.immovable = true;
         
         var ledge = platforms.create(400, 400, 'plainBrick');
         ledge.scale.setTo(4,.25);
-        ledge.body.immoveable = true;
+        ledge.body.immovable = true;
     
         
         
@@ -113,7 +113,7 @@ window.onload = function()
         // new trajectory.
      //   bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );\
         
-        cursors = game.input.keyboard.createCursorKeys();
+    //    cursors = game.input.keyboard.createCursorKeys();
         
         game.physics.arcade.collide(girl, platforms);
         
@@ -121,7 +121,7 @@ window.onload = function()
       //   girl.body.velocity.x = 0;
          
          
-        if (cursors.left.isDown)
+    /*    if (cursors.left.isDown)
          {
         //  Move to the left
              girl.body.velocity.x = -150;
