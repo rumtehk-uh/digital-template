@@ -55,12 +55,11 @@ window.onload = function()
        girl.animations.play('right', 10, true);
 
         
-        //walkRight.play('right', true);
         
       //  girl.body.gravity.y = 300;
 
         
-    //    cursors = game.input.keyboard.createCursorKeys();
+        cursors = game.input.keyboard.createCursorKeys();
         
         // Turn on the arcade physics engine for this sprite.
     //    game.physics.enable( bouncy, Phaser.Physics.ARCADE );
@@ -103,7 +102,7 @@ window.onload = function()
       //   girl.body.velocity.x = 0;
          
          
-      /*   if (cursors.left.isDown)
+        if (cursors.left.isDown)
          {
         //  Move to the left
              player.body.velocity.x = -150;
@@ -121,7 +120,7 @@ window.onload = function()
             //  Stand still
             player.animations.stop();
             player.frame = 5;
-        } */
+        } 
         
         //  Allow the player to jump if they are touching the ground.
        /* if (cursors.up.isDown && player.body.touching.down)
