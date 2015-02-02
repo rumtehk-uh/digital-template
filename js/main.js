@@ -83,7 +83,7 @@ window.onload = function()
      //   bouncy.body.collideWorldBounds = true;
         
         game.camera.follow(girl);
-        game.camera.deadzone = new Phaser.Rectangle(0, 0, 400, 300);
+        game.camera.deadzone = new Phaser.Rectangle(100, 100, 700, 500);
     }
     
   /*  function animationStarted(sprite, animation) 
@@ -143,10 +143,10 @@ window.onload = function()
         } 
         
         //  Allow the player to jump if they are touching the ground.
-       /* if (cursors.up.isDown && player.body.touching.down)
+        if (cursors.up.isDown && player.body.touching.down)
         {
             girl.body.velocity.y = -350;
-        } */
+        } 
              
      }
 };
