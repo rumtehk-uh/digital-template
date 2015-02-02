@@ -82,6 +82,7 @@ window.onload = function()
         // Make it bounce off of the world bounds.
      //   bouncy.body.collideWorldBounds = true;
         
+        game.camera.deadzone = new Phaser.Rectangle(0, 0, 800, 600);
     }
     
   /*  function animationStarted(sprite, animation) 
