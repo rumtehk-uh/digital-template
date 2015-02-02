@@ -22,8 +22,8 @@ window.onload = function()
     
     function preload() 
     {
-        // Load an image and call it 'logo'.
-    //    game.load.image( 'logo', 'assets/phaser.png' );
+        game.world.setBounds(0,0,1600, 600);
+        
         game.load.spritesheet('girlChar', 'assets/ExGirl.png', 40, 40, 12 );
         game.load.image('plainBrick', 'assets/brickPlatform.png');
         game.load.image('foggySky', 'assets/foggyBackground.png');
