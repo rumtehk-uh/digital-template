@@ -18,7 +18,7 @@ window.onload = function()
     
     var girl;
     var platforms;
-    var cursors = game.input.keyboard.createCursorKeys();
+    //cursors = game.input.keyboard.createCursorKeys();
     
     function preload() 
     {
@@ -75,8 +75,7 @@ window.onload = function()
         
         
       //  girl.body.gravity.y = 300;
-
-        
+        cursors = game.input.keyboard.createCursorKeys();
         
         // Turn on the arcade physics engine for this sprite.
     //    game.physics.enable( bouncy, Phaser.Physics.ARCADE );
