@@ -143,7 +143,7 @@ window.onload = function()
         } 
         
         //  Allow the player to jump if they are touching the ground.
-        if (game.input.keyboard.isDown(Phaser.Keyboard.DOWN) && player.body.touching.down)
+        if (game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR) && player.body.touching.down)
         {
             girl.body.velocity.y = -350;
         } 
