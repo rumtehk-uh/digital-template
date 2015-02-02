@@ -55,12 +55,17 @@ window.onload = function()
         // so it will be truly centered.
       //  bouncy.anchor.setTo( 0.5, 0.5 );
         
-/*        girl = game.add.sprite(game.world.centerX, game.world.centerY, 'girlChar');
-        girl.scale.set(2);
+        girl = game.add.sprite(32, game.world.height - 150, 'girlChar');
+        game.physics.arcade.enable(girl);
+        girl.body.bounce.y = 0.2;
+        girl.body.gravity.y = 300;
+        girl.body.collideWorldBounds = true;
+        //girl.scale.set(2);
+        
         girl.animations.add('left', [0, 1, 2], 10, true);
         girl.animations.add('down', [3, 4, 5], 10, true);
         girl.animations.add('up', [6, 7, 8], 10, true);
-        girl.animations.add('right', [9, 10, 11], 10, true); */
+        girl.animations.add('right', [9, 10, 11], 10, true); 
         
        // walkRight.onStart.add(animationStarted, this);
        // walkRight.onLoop.add(animationLooped, this);
