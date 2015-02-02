@@ -117,23 +117,23 @@ window.onload = function()
         game.physics.arcade.collide(girl, platforms);
         
         // girl.body.gravity.y = 300; 
-      //   girl.body.velocity.x = 0;
+        girl.body.velocity.x = 0;
          
          
-        if (cursors.left.isDown)
+        if(cursors.left.isDown)
          {
         //  Move to the left
              girl.body.velocity.x = -150;
              girl.animations.play('left');
              
          }
-        else if (cursors.right.isDown)
+        else if(cursors.right.isDown)
         {
             //  Move to the right
             girl.body.velocity.x = 150;
             girl.animations.play('right');
         }
-        else
+       /* else
         {
             //  Stand still
             girl.animations.stop();
