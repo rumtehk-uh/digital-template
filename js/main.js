@@ -83,7 +83,7 @@ window.onload = function()
      //   bouncy.body.collideWorldBounds = true;
         
         game.camera.follow(girl);
-        game.camera.deadzone = new Phaser.Rectangle(0, 0, 800, 600);
+        game.camera.deadzone = new Phaser.Rectangle(0, 0, 400, 300);
     }
     
   /*  function animationStarted(sprite, animation) 
