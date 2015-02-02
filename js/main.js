@@ -34,7 +34,7 @@ window.onload = function()
         var ground;
         var ledge;
         
-        this.game.physics.startSystem(Phaser.Physics.ARCADE);
+        //game.physics.startSystem(Phaser.Physics.ARCADE);
         //girl.enableBody = true;
         //game.physics.arcade.enable(girl);
         //girl.body.collideWorldBounds = true;
