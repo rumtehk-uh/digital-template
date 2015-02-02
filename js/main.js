@@ -115,7 +115,7 @@ window.onload = function()
         
         //cursors = game.input.keyboard.createCursorKeys();
         
-        game.physics.arcade.collide(player, platforms);
+        game.physics.arcade.collide(girl, platforms);
         
         // girl.body.gravity.y = 300; 
       //   girl.body.velocity.x = 0;
