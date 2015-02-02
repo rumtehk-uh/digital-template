@@ -40,13 +40,13 @@ window.onload = function()
         //girl.body.collideWorldBounds = true;
         
         platforms = game.add.group();
-        platforms.enableBody = true;
+        //platforms.enableBody = true;
         ground = platforms.create(0, game.world.height - 64, 'plain brick');
         ground.scale.setTo(2,2);
-        ground.body.immoveable = true;
+        //ground.body.immoveable = true;
         
         ledge = platforms.create(400, 400, 'ground');
-        ledge.body.immoveable = true;
+        //ledge.body.immoveable = true;
     
         
         
