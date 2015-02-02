@@ -25,7 +25,7 @@ window.onload = function()
         // Load an image and call it 'logo'.
     //    game.load.image( 'logo', 'assets/phaser.png' );
         game.load.spritesheet('girlChar', 'assets/ExGirl.png', 40, 40, 12 );
-        game.load.image('plainBrick', 'assets/R000M800.BMP');
+        game.load.tileSprite('plainBrick', 'assets/R000M800.BMP');
     }
     
     
@@ -38,12 +38,12 @@ window.onload = function()
         
         platforms = game.add.group();
         platforms.enableBody = true;
-        var ground = platforms.create(0, game.world.height - 64, 'plainBrick');
-        ground.scale.setTo(8,1);
+        var ground = platforms.create(0,0, 800, 600, 'plainBrick');
+        //ground.scale.setTo(8,1);
         ground.body.immovable = true;
         
         var ledge = platforms.create(400, 400, 'plainBrick');
-        ledge.scale.setTo(4,.25);
+        //ledge.scale.setTo(4,.25);
         ledge.body.immovable = true;
     
         
@@ -135,7 +135,7 @@ window.onload = function()
         {
             //  Stand still
             girl.animations.stop();
-            girl.frame = 5;
+            girl.frame = 4;
         } 
         
         //  Allow the player to jump if they are touching the ground.
