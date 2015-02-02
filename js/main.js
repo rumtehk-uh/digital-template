@@ -18,7 +18,7 @@ window.onload = function()
     
     var girl;
     var platforms;
-    cursors = game.input.keyboard.createCursorKeys();
+    var cursors = game.input.keyboard.createCursorKeys();
     
     function preload() 
     {
