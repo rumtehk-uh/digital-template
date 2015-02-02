@@ -40,10 +40,11 @@ window.onload = function()
         platforms = game.add.group();
         platforms.enableBody = true;
         var ground = platforms.create(0, game.world.height - 64, 'plainBrick');
-        ground.scale.setTo(5,1);
+        ground.scale.setTo(8,1);
         ground.body.immoveable = true;
         
         var ledge = platforms.create(400, 400, 'plainBrick');
+        ledge.scale.setTo(2,2);
         ledge.body.immoveable = true;
     
         
