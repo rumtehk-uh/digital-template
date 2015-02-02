@@ -23,6 +23,7 @@ window.onload = function()
         // Load an image and call it 'logo'.
     //    game.load.image( 'logo', 'assets/phaser.png' );
         game.load.spritesheet('girlChar', 'assets/ExGirl.png', 40, 40, 12 );
+        game.load.image('plain brick', assets/digital-template/assets/R000M800.BMP);
     }
     
    // var bouncy;
@@ -30,10 +31,24 @@ window.onload = function()
     
     function create() 
     {
-        //game.physics.startSystem(Phaser.Physics.ARCADE);
+        var ground;
+        var ledge;
+        
+        game.physics.startSystem(Phaser.Physics.ARCADE);
         //girl.enableBody = true;
         //game.physics.arcade.enable(girl);
         //girl.body.collideWorldBounds = true;
+        
+        platforms = game.add.group();
+        platforms.enableBody = true;
+        ground = platforms.create(0, game.world.height - 64, 'plain brick');
+        ground.scale.setTo(2,2);
+        ground.body.immoveable = true;
+        
+        ledge = platforms.create(400, 400, 'ground');
+        ledge.body.immoveable = true;
+    
+        
         
         // Create a sprite at the center of the screen using the 'logo' image.
       //  bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'logo' );
