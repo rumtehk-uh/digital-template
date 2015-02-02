@@ -32,9 +32,7 @@ window.onload = function()
     function create() 
     {
         game.physics.startSystem(Phaser.Physics.ARCADE);
-        game.physics.arcade.enable(girl);
         //girl.enableBody = true;
-        //girl.body.collideWorldBounds = true;
         
         game.stage.backgroundColor = '#2d2d2d';
         
@@ -120,17 +118,17 @@ window.onload = function()
         //girl.body.velocity.x = 0;
          
          
-        /*if(cursors.left.isDown)
+        if(cursors.left.isDown)
          {
         //  Move to the left
-             girl.body.velocity.x = -150;
+        //     girl.body.velocity.x = -150;
              girl.animations.play('left');
              
          }
         else if(cursors.right.isDown)
         {
             //  Move to the right
-            girl.body.velocity.x = 150;
+        //    girl.body.velocity.x = 150;
             girl.animations.play('right');
         }
        /* else
