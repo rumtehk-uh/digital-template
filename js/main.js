@@ -24,30 +24,27 @@ window.onload = function()
         // Load an image and call it 'logo'.
     //    game.load.image( 'logo', 'assets/phaser.png' );
         game.load.spritesheet('girlChar', 'assets/ExGirl.png', 40, 40, 12 );
-        game.load.image('plain brick', 'assets/digital-template/assets/R000M800.BMP');
+        game.load.image('plainBrick', 'assets/digital-template/assets/R000M800.BMP');
     }
-    
-   // var bouncy;
     
     
     function create() 
     {
-        var ground;
-        var ledge;
-        
-        //game.physics.startSystem(Phaser.Physics.ARCADE);
+        game.physics.startSystem(Phaser.Physics.ARCADE);
         //girl.enableBody = true;
         //game.physics.arcade.enable(girl);
         //girl.body.collideWorldBounds = true;
         
-        platforms = game.add.group();
-        //platforms.enableBody = true;
-        ground = platforms.create(0, game.world.height - 64, 'plain brick');
-        ground.scale.setTo(2,2);
-        //ground.body.immoveable = true;
+        game.stage.backgroundColor = '#2d2d2d';
         
-        ledge = platforms.create(400, 400, 'plain brick');
-        //ledge.body.immoveable = true;
+        platforms = game.add.group();
+        platforms.enableBody = true;
+        var ground = platforms.create(0, game.world.height - 64, 'plainBrick');
+        ground.scale.setTo(1,20);
+        ground.body.immoveable = true;
+        
+        var ledge = platforms.create(400, 400, 'plainBrick');
+        ledge.body.immoveable = true;
     
         
         
@@ -57,12 +54,12 @@ window.onload = function()
         // so it will be truly centered.
       //  bouncy.anchor.setTo( 0.5, 0.5 );
         
-        girl = game.add.sprite(game.world.centerX, game.world.centerY, 'girlChar');
+/*        girl = game.add.sprite(game.world.centerX, game.world.centerY, 'girlChar');
         girl.scale.set(2);
         girl.animations.add('left', [0, 1, 2], 10, true);
         girl.animations.add('down', [3, 4, 5], 10, true);
         girl.animations.add('up', [6, 7, 8], 10, true);
-        girl.animations.add('right', [9, 10, 11], 10, true);
+        girl.animations.add('right', [9, 10, 11], 10, true); */
         
        // walkRight.onStart.add(animationStarted, this);
        // walkRight.onLoop.add(animationLooped, this);
@@ -116,7 +113,7 @@ window.onload = function()
       //   girl.body.velocity.x = 0;
          
          
-        if (cursors.left.isDown)
+/*        if (cursors.left.isDown)
          {
         //  Move to the left
              girl.body.velocity.x = -150;
@@ -134,7 +131,7 @@ window.onload = function()
             //  Stand still
             girl.animations.stop();
             girl.frame = 5;
-        } 
+        } */
         
         //  Allow the player to jump if they are touching the ground.
        /* if (cursors.up.isDown && player.body.touching.down)
