@@ -18,7 +18,7 @@ window.onload = function()
     
     var girl;
     var platforms;
-    //cursors = game.input.keyboard.createCursorKeys();
+    var walkSpeed = 150;
     
     function preload() 
     {
@@ -121,17 +121,17 @@ window.onload = function()
         if(game.input.keyboard.isDown(Phaser.Keyboard.LEFT))
          {
         //  Move to the left
-             girl.body.velocity.x = -150;
+             girl.body.velocity.x = (0 - walkSpeed);
              girl.animations.play('left');
              
          }
         else if(game.input.keyboard.isDown(Phaser.Keyboard.RIGHT))
         {
             //  Move to the right
-            girl.body.velocity.x = 150;
+            girl.body.velocity.x = walkSpeed;
             girl.animations.play('right');
         }
-       /* else
+        else
         {
             //  Stand still
             girl.animations.stop();
