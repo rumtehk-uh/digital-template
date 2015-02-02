@@ -25,7 +25,7 @@ window.onload = function()
         // Load an image and call it 'logo'.
     //    game.load.image( 'logo', 'assets/phaser.png' );
         game.load.spritesheet('girlChar', 'assets/ExGirl.png', 40, 40, 12 );
-        game.load.tileSprite('plainBrick', 'assets/R000M800.BMP');
+        game.load.image('plainBrick', 'assets/R000M800.BMP');
     }
     
     
@@ -38,7 +38,7 @@ window.onload = function()
         
         platforms = game.add.group();
         platforms.enableBody = true;
-        var ground = platforms.create(0,0, 800, 40, 'plainBrick');
+        var ground = platforms.create(0,game.world.height - 128, 'plainBrick');
         //ground.scale.setTo(8,1);
         ground.body.immovable = true;
         
