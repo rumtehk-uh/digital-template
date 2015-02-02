@@ -32,9 +32,9 @@ window.onload = function()
     function create() 
     {
         game.physics.startSystem(Phaser.Physics.ARCADE);
-        //girl.enableBody = true;
-        //game.physics.arcade.enable(girl);
-        //girl.body.collideWorldBounds = true;
+        girl.enableBody = true;
+        game.physics.arcade.enable(girl);
+        girl.body.collideWorldBounds = true;
         
         game.stage.backgroundColor = '#2d2d2d';
         
