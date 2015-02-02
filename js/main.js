@@ -38,7 +38,7 @@ window.onload = function()
         
         platforms = game.add.group();
         platforms.enableBody = true;
-        var ground = platforms.create(0,0, 800, 600, 'plainBrick');
+        var ground = platforms.create(0,0, 800, 40, 'plainBrick');
         //ground.scale.setTo(8,1);
         ground.body.immovable = true;
         
