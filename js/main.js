@@ -31,8 +31,8 @@ window.onload = function()
     function create() 
     {
         game.physics.startSystem(Phaser.Physics.ARCADE);
-        //game.physics.arcade.enable(girl);
-        //girl.enableBody = true;
+        game.physics.arcade.enable(girl);
+        girl.enableBody = true;
         //girl.body.collideWorldBounds = true;
         
         // Create a sprite at the center of the screen using the 'logo' image.
