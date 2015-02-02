@@ -44,7 +44,7 @@ window.onload = function()
       //  bouncy.anchor.setTo( 0.5, 0.5 );
         
         girl = game.add.sprite(game.world.centerX, game.world.centerY, 'girlChar');
-        girl.scale.set(3);
+        girl.scale.set(2);
         girl.animations.add('left', [0, 1, 2], 10, true);
         girl.animations.add('down', [3, 4, 5], 10, true);
         girl.animations.add('up', [6, 7, 8], 10, true);
@@ -52,7 +52,7 @@ window.onload = function()
         
        // walkRight.onStart.add(animationStarted, this);
        // walkRight.onLoop.add(animationLooped, this);
-       girl.animations.play('right', 10, true);
+       //girl.animations.play('right', 10, true);
 
         
         
