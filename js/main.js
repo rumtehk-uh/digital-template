@@ -30,12 +30,10 @@ window.onload = function()
     
     function create() 
     {
-        //var girl;
-    //    var walkRight;
-    //    game.physics.startSystem(Phaser.Physics.ARCADE);
-    //    girl.enableBody = true;
-    //    game.physics.arcade.enable(girl);
-    //    player.body.collideWorldBounds = true;
+        game.physics.startSystem(Phaser.Physics.ARCADE);
+        game.physics.arcade.enable(girl);
+        girl.enableBody = true;
+        girl.body.collideWorldBounds = true;
         
         // Create a sprite at the center of the screen using the 'logo' image.
       //  bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'logo' );
@@ -59,7 +57,7 @@ window.onload = function()
       //  girl.body.gravity.y = 300;
 
         
-        //cursors = game.input.keyboard.createCursorKeys();
+        cursors = game.input.keyboard.createCursorKeys();
         
         // Turn on the arcade physics engine for this sprite.
     //    game.physics.enable( bouncy, Phaser.Physics.ARCADE );
@@ -96,7 +94,7 @@ window.onload = function()
         // new trajectory.
      //   bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );\
         
-        cursors = game.input.keyboard.createCursorKeys();
+        //cursors = game.input.keyboard.createCursorKeys();
         
         // girl.body.gravity.y = 300; 
       //   girl.body.velocity.x = 0;
@@ -105,27 +103,27 @@ window.onload = function()
         if (cursors.left.isDown)
          {
         //  Move to the left
-             player.body.velocity.x = -150;
-             player.animations.play('left');
+             girl.body.velocity.x = -150;
+             girl.animations.play('left');
              
          }
         else if (cursors.right.isDown)
         {
             //  Move to the right
-            player.body.velocity.x = 150;
-            player.animations.play('right');
+            girl.body.velocity.x = 150;
+            girl.animations.play('right');
         }
         else
         {
             //  Stand still
-            player.animations.stop();
-            player.frame = 5;
+            girl.animations.stop();
+            girl.frame = 5;
         } 
         
         //  Allow the player to jump if they are touching the ground.
        /* if (cursors.up.isDown && player.body.touching.down)
         {
-            player.body.velocity.y = -350;
+            girl.body.velocity.y = -350;
         } */
              
      }
