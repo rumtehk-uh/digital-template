@@ -118,7 +118,7 @@ window.onload = function()
         //girl.body.velocity.x = 0;
          
          
-        if(cursors.left.isDown)
+    /*    if(cursors.left.isDown)
          {
         //  Move to the left
         //     girl.body.velocity.x = -150;
