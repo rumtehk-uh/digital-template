@@ -84,6 +84,8 @@ window.onload = function()
       //  girl.body.gravity.y = 300;
         cursors = game.input.keyboard.createCursorKeys();
         
+        jump = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+        
         // Turn on the arcade physics engine for this sprite.
     //    game.physics.enable( bouncy, Phaser.Physics.ARCADE );
         // Make it bounce off of the world bounds.
@@ -148,12 +150,16 @@ window.onload = function()
             girl.animations.stop();
             girl.frame = 4;
         } 
+        if(jump.isDown)
+        {
+            girl.body.velocity.y = -300;
+        }
         
         //  Allow the player to jump if they are touching the ground.
-        if (game.input.keyboard.isDown(Phaser.Keyboard.UP) && player.body.touching.down)
+    /*    if (game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR) && player.body.touching.down)
         {
             girl.body.velocity.y = -350;
-        } 
+        } */
              
      }
      
