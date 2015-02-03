@@ -54,14 +54,6 @@ window.onload = function()
         var ledge = platforms.create(400, 400, 'plainBrick');
         ledge.scale.setTo(.25,.25);
         ledge.body.immovable = true;
-    
-        
-        
-        // Create a sprite at the center of the screen using the 'logo' image.
-      //  bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'logo' );
-        // Anchor the sprite at its center, as opposed to its top-left corner.
-        // so it will be truly centered.
-      //  bouncy.anchor.setTo( 0.5, 0.5 );
         
         girl = game.add.sprite(32, game.world.height - 150, 'girlChar');
         game.physics.arcade.enable(girl);
@@ -83,45 +75,16 @@ window.onload = function()
         
       //  girl.body.gravity.y = 300;
         cursors = game.input.keyboard.createCursorKeys();
+        
+        game.camera.follow(girl);
+        girl.anchor.setTo(.5, .5);
 
-        
-        // Turn on the arcade physics engine for this sprite.
-    //    game.physics.enable( bouncy, Phaser.Physics.ARCADE );
-        // Make it bounce off of the world bounds.
-     //   bouncy.body.collideWorldBounds = true;
-        
-        game.camera.follow(girl, Phaser.Camera.FOLLOW_TOPDOWN_TIGHT);
         //game.camera.deadzone = new Phaser.Rectangle(100, 100, 600, 400);
     }
-    
-  /*  function animationStarted(sprite, animation) 
-    {
-        game.add.text(32, 32, 'Animation started', { fill: 'white' });
-    }
-
-    function animationLooped(sprite, animation) 
-    {
-        if (animation.loopCount === 1)
-        {
-            loopText = game.add.text(32, 64, 'Animation looped', { fill: 'white' });
-        }
-        else
-        {
-            loopText.text = 'Animation looped x2';
-            animation.loop = false;
-        }
-    } */
 
     
     function update() 
     {
-        // Accelerate the 'logo' sprite towards the cursor,
-        // accelerating at 500 pixels/second and moving no faster than 500 pixels/second
-        // in X or Y.
-        // This function returns the rotation angle that makes it visually match its
-        // new trajectory.
-     //   bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );\
-        
     //    cursors = game.input.keyboard.createCursorKeys();
         
         game.physics.arcade.collide(girl, platforms);
