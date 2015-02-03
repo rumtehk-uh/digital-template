@@ -40,7 +40,7 @@ window.onload = function()
         
         reunited = game.add.audio('reunited');
 
-        reunited.play();
+        reunited.play(true);
         
         game.add.sprite(0,0, 'foggySky');
         //game.stage.backgroundColor = '#2d2d2d';
