@@ -90,8 +90,8 @@ window.onload = function()
         // Make it bounce off of the world bounds.
      //   bouncy.body.collideWorldBounds = true;
         
-        game.camera.follow(girl);
-        game.camera.deadzone = new Phaser.Rectangle(100, 100, 600, 400);
+        this.game.camera.follow(girl);
+        this.game.camera.deadzone = new Phaser.Rectangle(100, 100, 600, 400);
     }
     
   /*  function animationStarted(sprite, animation) 
