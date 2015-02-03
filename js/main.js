@@ -156,4 +156,9 @@ window.onload = function()
         } 
              
      }
+     
+    function render() 
+    {
+        game.debug.soundInfo(reunited, 20, 32);
+    }
 };
