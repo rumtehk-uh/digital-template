@@ -66,7 +66,7 @@ window.onload = function()
         girl = game.add.sprite(32, game.world.height - 150, 'girlChar');
         game.physics.arcade.enable(girl);
         girl.body.bounce.y = 0.2;
-        girl.body.gravity.y = 300;
+        girl.body.gravity.y = 400;
         girl.body.collideWorldBounds = true;
         //girl.scale.set(2);
         
@@ -157,7 +157,7 @@ window.onload = function()
         //  Allow the player to jump if they are touching the ground.
         if (game.input.keyboard.isDown(Phaser.Keyboard.UP) && girl.body.touching.down)
         {
-            girl.body.velocity.y = -275;
+            girl.body.velocity.y = -300;
         } 
              
      }
