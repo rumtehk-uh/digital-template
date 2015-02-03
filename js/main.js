@@ -23,8 +23,6 @@ window.onload = function()
     
     function preload() 
     {
-        game.world.setBounds(0,0,1600, 600);
-        
         game.load.spritesheet('girlChar', 'assets/ExGirl.png', 40, 40, 12 );
         game.load.image('plainBrick', 'assets/brickPlatform.png');
         game.load.image('foggySky', 'assets/foggyBackground.png');
@@ -37,6 +35,8 @@ window.onload = function()
     {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         //girl.enableBody = true;
+        
+        game.world.setBounds(0,0,1600, 600);
         
         reunited = game.add.audio('reunited');
         reunited.loop = true;
