@@ -149,10 +149,10 @@ window.onload = function()
             girl.animations.stop();
             girl.frame = 4;
         } 
-        if(jump.isDown && player.body.touching.down)
+      /*  if(jump.isDown && player.body.touching.down)
         {
             girl.body.velocity.y = -300;
-        }
+        } */
         
         //  Allow the player to jump if they are touching the ground.
         if (game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR) && player.body.touching.down)
