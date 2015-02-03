@@ -91,7 +91,7 @@ window.onload = function()
      //   bouncy.body.collideWorldBounds = true;
         
         game.camera.follow(girl);
-        //game.camera.deadzone = new Phaser.Rectangle(100, 100, 700, 500);
+        game.camera.deadzone = new Phaser.Rectangle(100, 100, 600, 400);
     }
     
   /*  function animationStarted(sprite, animation) 
@@ -164,6 +164,12 @@ window.onload = function()
      
     function render() 
     {
-        game.debug.soundInfo(reunited, 20, 32);
+        var zone = game.camera.deadzone;
+    
+        game.context.fillStyle = 'rgba(255,0,0,0.6)';
+        game.context.fillRect(zone.x, zone.y, zone.width, zone.height);
+    
+        game.debug.cameraInfo(game.camera, 32, 32);
+        game.debug.spriteCoords(girl, 32, 500);
     }
 };
