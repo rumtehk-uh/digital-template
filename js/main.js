@@ -150,7 +150,7 @@ window.onload = function()
             girl.animations.stop();
             girl.frame = 4;
         } 
-        if(jump.isDown)
+        if(jump.isDown && player.body.touching.down)
         {
             girl.body.velocity.y = -300;
         }
