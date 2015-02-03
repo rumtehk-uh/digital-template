@@ -38,9 +38,9 @@ window.onload = function()
         game.physics.startSystem(Phaser.Physics.ARCADE);
         //girl.enableBody = true;
         
-        reunited = game.add.audio('reunited');
+        reunited = game.add.audio('reunited', true);
 
-        reunited.play(true);
+        reunited.play();
         
         game.add.sprite(0,0, 'foggySky');
         //game.stage.backgroundColor = '#2d2d2d';
