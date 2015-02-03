@@ -38,8 +38,8 @@ window.onload = function()
         game.physics.startSystem(Phaser.Physics.ARCADE);
         //girl.enableBody = true;
         
-        reunited = game.add.audio('reunited', true);
-
+        reunited = game.add.audio('reunited');
+        reunited.loop = true;
         reunited.play();
         
         game.add.sprite(0,0, 'foggySky');
