@@ -19,6 +19,7 @@ window.onload = function()
     var girl;
     var platforms;
     var walkSpeed = 150;
+    var reunited;
     
     function preload() 
     {
@@ -27,6 +28,8 @@ window.onload = function()
         game.load.spritesheet('girlChar', 'assets/ExGirl.png', 40, 40, 12 );
         game.load.image('plainBrick', 'assets/brickPlatform.png');
         game.load.image('foggySky', 'assets/foggyBackground.png');
+        
+        game.load.audio('reunited', 'assets/Reunited.mid');
     }
     
     
@@ -34,6 +37,10 @@ window.onload = function()
     {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         //girl.enableBody = true;
+        
+        reunited = game.add.audio('reunited');
+
+        reunited.play();
         
         game.add.sprite(0,0, 'foggySky');
         //game.stage.backgroundColor = '#2d2d2d';
