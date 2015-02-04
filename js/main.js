@@ -48,7 +48,7 @@ window.onload = function()
         map.addTilesetImage('Brick', 'brick');
         map.addTilesetImage('Sky', 'foggySky');
         
-        map.setCollisionBetween(15, 16);
+        map.setCollisionBetween(0, 56);
         map.setCollisionBetween(20, 25);
         map.setCollisionBetween(27, 29);
         map.setCollision(40);
