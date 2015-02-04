@@ -67,6 +67,8 @@ window.onload = function()
         collision = map3.createLayer('Collision');
         collision.resizeWorld(); */
         
+        map.setCollisionBetween(1, 1000, true, 'Platforms');
+        
         reunited = game.add.audio('reunited');
         reunited.loop = true;
         reunited.play();
