@@ -59,8 +59,8 @@ window.onload = function()
         platforms = map.createLayer('Platforms');
         platforms.debug = true;
         platforms.resizeWorld();
-    //    collision = map.createLayer('Collision');
-    //    collision.resizeWorld(); */
+        collision = map.createLayer('Collision');
+        collision.resizeWorld(); */
         
         reunited = game.add.audio('reunited');
         reunited.loop = true;
