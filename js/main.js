@@ -31,8 +31,6 @@ window.onload = function()
         game.load.spritesheet('girlChar', 'assets/ExGirl.png', 40, 40, 12 );
         game.load.image('plainBrick', 'assets/brickPlatform.png');
         game.load.image('foggySky', 'assets/foggyBackground.png');
-        //game.load.image('brick', 'assets/Brick.png');
-        
         game.load.image('brick', 'assets/Brick.png');
         game.load.tilemap('map', 'assets/iKnowYou.json', null, Phaser.Tilemap.TILED_JSON);
         
@@ -53,10 +51,10 @@ window.onload = function()
         //sets up the layers of the filemap
         background = map.createLayer('Background');
         background.resizeWorld();
-        platforms = map.createLayer('Platforms');
+    /*    platforms = map.createLayer('Platforms');
         platforms.resizeWorld();
         collision = map.createLayer('Collision');
-        collision.resizeWorld();
+        collision.resizeWorld(); */
         
         reunited = game.add.audio('reunited');
         reunited.loop = true;
