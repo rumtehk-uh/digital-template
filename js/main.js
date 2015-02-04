@@ -49,12 +49,12 @@ window.onload = function()
         map.addTilesetImage('Sky', 'foggySky');
         
         //sets up the layers of the filemap
-        background = map.createLayer('Background');
-        background.resizeWorld();
-    /*    platforms = map.createLayer('Platforms');
+    //    background = map.createLayer('Background');
+    //    background.resizeWorld();
+        platforms = map.createLayer('Platforms');
         platforms.resizeWorld();
-        collision = map.createLayer('Collision');
-        collision.resizeWorld(); */
+    //    collision = map.createLayer('Collision');
+    //    collision.resizeWorld(); */
         
         reunited = game.add.audio('reunited');
         reunited.loop = true;
