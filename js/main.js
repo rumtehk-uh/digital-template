@@ -42,7 +42,7 @@ window.onload = function()
     
     function create() 
     {
-        game.world.setBounds(0, 0, 3200, 3200);
+        game.world.setBounds(0, 0, 3200, 1824);
         game.physics.startSystem(Phaser.Physics.ARCADE);
         
         //setting up the images used in the tilemap
