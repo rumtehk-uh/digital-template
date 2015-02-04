@@ -22,7 +22,7 @@ window.onload = function()
     var reunited;
     var map;
     var map2;
-    var map3;
+//    var map3;
     var tiles;
     var background;
     var platforms;
@@ -48,10 +48,10 @@ window.onload = function()
         //setting up the images used in the tilemap
         map = game.add.tilemap('map');
         map2 = game.add.tilemap('map');
-        map3 = game.add.tilemap('map');
+    //    map3 = game.add.tilemap('map');
         map.addTilesetImage('Brick', 'brick');
         map2.addTilesetImage('Sky', 'foggySky');
-        map3.addTilesetImage('Brick', 'brick');
+    //    map3.addTilesetImage('Brick', 'brick');
         
         map.setCollisionBetween(0, 8);
         map.setCollisionBetween(20, 25);
@@ -64,8 +64,8 @@ window.onload = function()
         platforms = map.createLayer('Platforms');
         platforms.debug = true;
         platforms.resizeWorld();
-        collision = map3.createLayer('Collision');
-        collision.resizeWorld(); */
+    //    collision = map3.createLayer('Collision');
+    //    collision.resizeWorld(); */
         
         map.setCollisionBetween(1, 1000, true, 'Platforms');
         
