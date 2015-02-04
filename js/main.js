@@ -17,15 +17,24 @@ window.onload = function()
     var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
     
     var girl;
-    var platforms;
+    var brick;
     var walkSpeed = 150;
     var reunited;
+    var map;
+    var tiles;
+    var background;
+    var platforms;
+    var collision;
     
     function preload() 
     {
         game.load.spritesheet('girlChar', 'assets/ExGirl.png', 40, 40, 12 );
         game.load.image('plainBrick', 'assets/brickPlatform.png');
         game.load.image('foggySky', 'assets/foggyBackground.png');
+        //game.load.image('brick', 'assets/Brick.png');
+        
+        game.load.image('brick', 'assets/Brick.png');
+        game.load.tilemap('map', 'assets/iKnowYou.json', null, Phaser.Tilemap.TILED_JSON);
         
         game.load.audio('reunited', 'assets/Reunited1.mp3');
     }
@@ -33,11 +42,21 @@ window.onload = function()
     
     function create() 
     {
-        game.world.setBounds(0, 0, 1600, 600);
+        game.world.setBounds(0, 0, 3200, 3200);
         game.physics.startSystem(Phaser.Physics.ARCADE);
-        //girl.enableBody = true;
         
-        //game.world.setBounds(0,0,1600, 600);
+        //setting up the images used in the tilemap
+        map = game.add.tilemap('map');
+        map.addTilesetImage('Brick', 'brick');
+        map.addTilesetImage('Sky', 'foggySky');
+        
+        //sets up the layers of the filemap
+        background = map.createLayer('Background');
+        background.resizeWorld();
+        platforms = map.createLayer('Platforms');
+        platforms.background.resizeWorld();
+        collision = map.createLayer('Collision');
+        collision.resizeWorld();
         
         reunited = game.add.audio('reunited');
         reunited.loop = true;
@@ -46,7 +65,7 @@ window.onload = function()
         game.add.sprite(0,0, 'foggySky');
         //game.stage.backgroundColor = '#2d2d2d';
         
-        platforms = game.add.group();
+        /*platforms = game.add.group();
         platforms.enableBody = true;
         var ground = platforms.create(0,game.world.height - 64, 'plainBrick');
         ground.scale.setTo(.5,.5);
@@ -54,7 +73,7 @@ window.onload = function()
         
         var ledge = platforms.create(400, 400, 'plainBrick');
         ledge.scale.setTo(.25,.25);
-        ledge.body.immovable = true;
+        ledge.body.immovable = true;*/
         
         girl = game.add.sprite(32, game.world.height - 150, 'girlChar');
         game.physics.arcade.enable(girl);
@@ -116,7 +135,7 @@ window.onload = function()
         } */
         
         //  Allow the player to jump if they are touching the ground.
-        if (game.input.keyboard.isDown(Phaser.Keyboard.UP) && girl.body.touching.down)
+        if (game.input.keyboard.isDown(Phaser.Keyboard.UP) /*&& girl.body.touching.down*/)
         {
             girl.body.velocity.y = -350;
         } 
