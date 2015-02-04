@@ -85,8 +85,6 @@ window.onload = function()
     
     function update() 
     {
-    //    cursors = game.input.keyboard.createCursorKeys();
-        
         game.physics.arcade.collide(girl, platforms);
         
         // girl.body.gravity.y = 300; 
@@ -125,7 +123,7 @@ window.onload = function()
              
      }
      
-   /* function render() 
+    function render() 
     {
         var zone = game.camera.deadzone;
     
@@ -134,5 +132,5 @@ window.onload = function()
     
         game.debug.cameraInfo(game.camera, 32, 32);
         game.debug.spriteCoords(girl, 32, 500);
-    } */
+    } 
 };
