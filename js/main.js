@@ -66,8 +66,8 @@ window.onload = function()
         reunited.loop = true;
         reunited.play();
         
-        game.add.sprite(0,0, 'foggySky');
-        game.stage.backgroundColor = '#2d2d2d';
+    //    game.add.sprite(0,0, 'foggySky');
+    //    game.stage.backgroundColor = '#2d2d2d';
         
         /*platforms = game.add.group();
         platforms.enableBody = true;
