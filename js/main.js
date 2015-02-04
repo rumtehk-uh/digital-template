@@ -48,7 +48,7 @@ window.onload = function()
         //setting up the images used in the tilemap
         map = game.add.tilemap('map');
         map.addTilesetImage('Brick', 'brick');
-        map.addTilesetImage('Sky', 'brick');
+        map.addTilesetImage('Sky', 'foggySky');
         
         //sets up the layers of the filemap
         background = map.createLayer('Background');
