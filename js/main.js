@@ -51,6 +51,7 @@ window.onload = function()
         map3 = game.add.tilemap('map');
         map.addTilesetImage('Brick', 'brick');
         map2.addTilesetImage('Sky', 'foggySky');
+        map3.addTilesetImage('Brick', 'brick');
         
         map.setCollisionBetween(0, 8);
         map.setCollisionBetween(20, 25);
