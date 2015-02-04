@@ -54,7 +54,7 @@ window.onload = function()
         background = map.createLayer('Background');
         background.resizeWorld();
         platforms = map.createLayer('Platforms');
-        platforms.background.resizeWorld();
+        platforms.resizeWorld();
         collision = map.createLayer('Collision');
         collision.resizeWorld();
         
