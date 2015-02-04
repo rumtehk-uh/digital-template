@@ -33,10 +33,11 @@ window.onload = function()
     
     function create() 
     {
+        game.world.setBounds(0, 0, 1600, 600);
         game.physics.startSystem(Phaser.Physics.ARCADE);
         //girl.enableBody = true;
         
-        game.world.setBounds(0,0,1600, 600);
+        //game.world.setBounds(0,0,1600, 600);
         
         reunited = game.add.audio('reunited');
         reunited.loop = true;
@@ -71,13 +72,12 @@ window.onload = function()
        // walkRight.onLoop.add(animationLooped, this);
        //girl.animations.play('right', 10, true);
 
-        
-        
       //  girl.body.gravity.y = 300;
         cursors = game.input.keyboard.createCursorKeys();
         
-        game.camera.follow(girl);
         girl.anchor.setTo(.5, .5);
+        game.camera.follow(girl);
+        //girl.anchor.setTo(.5, .5);
 
         //game.camera.deadzone = new Phaser.Rectangle(100, 100, 600, 400);
     }
