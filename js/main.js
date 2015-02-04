@@ -73,7 +73,7 @@ window.onload = function()
        //girl.animations.play('right', 10, true);
 
       //  girl.body.gravity.y = 300;
-        cursors = game.input.keyboard.createCursorKeys();
+       // cursors = game.input.keyboard.createCursorKeys();
         
         girl.anchor.setTo(.5, .5);
         game.camera.follow(girl);
