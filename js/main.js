@@ -51,7 +51,7 @@ window.onload = function()
         map.setCollisionBetween(0, 8);
         map.setCollisionBetween(20, 25);
         map.setCollisionBetween(27, 29);
-        map.setCollision(40);
+        map.setCollision(0);
         
         //sets up the layers of the filemap
     //    background = map.createLayer('Background');
