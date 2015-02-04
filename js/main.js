@@ -21,6 +21,7 @@ window.onload = function()
     var walkSpeed = 150;
     var reunited;
     var map;
+    var map2;
     var tiles;
     var background;
     var platforms;
@@ -45,8 +46,9 @@ window.onload = function()
         
         //setting up the images used in the tilemap
         map = game.add.tilemap('map');
+        map2 = game.add.tilemap('map');
         map.addTilesetImage('Brick', 'brick');
-        map.addTilesetImage('Sky', 'foggySky');
+        map2.addTilesetImage('Sky', 'foggySky');
         
         map.setCollisionBetween(0, 8);
         map.setCollisionBetween(20, 25);
@@ -54,13 +56,13 @@ window.onload = function()
         map.setCollision(0);
         
         //sets up the layers of the filemap
-    //    background = map.createLayer('Background');
-    //    background.resizeWorld();
+        background = map2.createLayer('Background');
+        background.resizeWorld();
         platforms = map.createLayer('Platforms');
         platforms.debug = true;
         platforms.resizeWorld();
-        collision = map.createLayer('Collision');
-        collision.resizeWorld(); */
+    //    collision = map.createLayer('Collision');
+    //    collision.resizeWorld(); */
         
         reunited = game.add.audio('reunited');
         reunited.loop = true;
