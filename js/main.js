@@ -14,7 +14,7 @@ window.onload = function()
     
     "use strict";
     
-    var game = new Phaser.Game( 800, 800, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
+    var game = new Phaser.Game( 3200, 3200, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
     
     var girl;
     var brick;
