@@ -145,7 +145,7 @@ window.onload = function()
         {
             girl.body.velocity.y = -350;
             jumped = false;
-            if(game.input.keyboard.isDown(Phaser.Keyboard.UP))
+            if(game.input.keyboard.isUp(Phaser.Keyboard.UP))
             {
                 jumped = true;
             }
