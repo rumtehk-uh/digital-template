@@ -103,7 +103,6 @@ window.onload = function()
         //girl.anchor.setTo(.5, .5);
 
         //game.camera.deadzone = new Phaser.Rectangle(100, 100, 600, 400);
-        jumped = true;
     }
     
     //find objects in a Tiled layer that containt a property called "type" equal to a certain value
