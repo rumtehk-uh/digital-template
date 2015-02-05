@@ -163,7 +163,7 @@ window.onload = function()
             girl.body.velocity.y = -350;
         }
         
-        if (game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR) && girl.body.onFloor())k
+        if (game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR) && girl.body.onFloor())
         {
             girl.body.gravity.y = -400;
         } 
