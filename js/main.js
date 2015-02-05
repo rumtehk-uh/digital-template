@@ -163,7 +163,7 @@ window.onload = function()
             girl.body.velocity.y = -350;
         }
         
-        if (game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR) && girl.body.onFloor())
+        if (game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR) && girl.body.onWall())
         {
             girl.body.gravity.y = -400;
             game.add.tween(girl).to( { angle: 180 }, 100, Phaser.Easing.Linear.None, true);
