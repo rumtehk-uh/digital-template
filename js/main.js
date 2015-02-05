@@ -19,6 +19,7 @@ window.onload = function()
     var girl;
     var brick;
     var walkSpeed = 150;
+    var jumped;
     var reunited;
     var map;
     var map2;
@@ -44,6 +45,8 @@ window.onload = function()
     {
         game.world.setBounds(0, 0, 3200, 1824);
         game.physics.startSystem(Phaser.Physics.ARCADE);
+        
+        jumped = true;
         
         //setting up the images used in the tilemap
         map = game.add.tilemap('map');
@@ -137,10 +140,15 @@ window.onload = function()
             girl.body.velocity.y = -300;
         } */
         
-        //  Allow the player to jump if they are touching the ground.
-        if (game.input.keyboard.isDown(Phaser.Keyboard.UP) && girl.body.onFloor())
+        //  Allow the player to jump if they are touching the ground and have lifted the jump key since last jump
+        if (game.input.keyboard.isDown(Phaser.Keyboard.UP) && girl.body.onFloor() && jumped)
         {
             girl.body.velocity.y = -350;
+            jumped = false;
+            if(game.input.keyboard.isDown(Phaser.Keyboard.UP))
+            {
+                jumped = true;
+            }
         } 
              
      }
