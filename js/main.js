@@ -19,7 +19,6 @@ window.onload = function()
     var girl;
     var brick;
     var walkSpeed = 150;
-    var jumped;
     var reunited;
     var map;
     var map2;
@@ -139,18 +138,12 @@ window.onload = function()
             girl.body.velocity.y = -300;
         } */
         
-        //checks to see if the player has released key from last jump
-        if(game.input.keyboard.isUp(Phaser.Keyboard.UP))
-        {
-            jumped = true;
-        }
         
         //  Allow the player to jump if they are touching the ground and have lifted the jump key since last jump
         //cause spamming jump by holding the button isn't cool
-        if (game.input.keyboard.isDown(Phaser.Keyboard.UP) && girl.body.onFloor() && jumped)
+        if (game.input.keyboard.isDown(Phaser.Keyboard.UP) && girl.body.onFloor())
         {
             girl.body.velocity.y = -350;
-            jumped = false;
         } 
              
      }
