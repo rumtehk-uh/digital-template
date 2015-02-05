@@ -164,7 +164,7 @@ window.onload = function()
         }
         
         //setting up gravity manipulation
-        if (game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR) && girl.body.onWall())
+        if (game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR) && girl.body.onFloor())
         {
             if (girl.body.gravity.y = 400)
             {
