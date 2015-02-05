@@ -21,6 +21,8 @@ window.onload = function()
     var walkSpeed = 150;
     var reunited;
     var map;
+    var map2;
+//    var map3;
     var tiles;
     var background;
     var platforms;
@@ -31,8 +33,6 @@ window.onload = function()
         game.load.spritesheet('girlChar', 'assets/ExGirl.png', 40, 40, 12 );
         game.load.image('plainBrick', 'assets/brickPlatform.png');
         game.load.image('foggySky', 'assets/foggyBackground.png');
-        //game.load.image('brick', 'assets/Brick.png');
-        
         game.load.image('brick', 'assets/Brick.png');
         game.load.tilemap('map', 'assets/iKnowYou.json', null, Phaser.Tilemap.TILED_JSON);
         
@@ -42,28 +42,39 @@ window.onload = function()
     
     function create() 
     {
-        game.world.setBounds(0, 0, 3200, 3200);
+        game.world.setBounds(0, 0, 3200, 1824);
         game.physics.startSystem(Phaser.Physics.ARCADE);
         
         //setting up the images used in the tilemap
         map = game.add.tilemap('map');
+        map2 = game.add.tilemap('map');
+    //    map3 = game.add.tilemap('map');
         map.addTilesetImage('Brick', 'brick');
-        map.addTilesetImage('Sky', 'foggySky');
+        map2.addTilesetImage('Sky', 'foggySky');
+    //    map3.addTilesetImage('Brick', 'brick');
+        
+        map.setCollisionBetween(0, 8);
+        map.setCollisionBetween(20, 25);
+        map.setCollisionBetween(27, 29);
+        map.setCollision(0);
         
         //sets up the layers of the filemap
-        background = map.createLayer('Background');
+        background = map2.createLayer('Background');
         background.resizeWorld();
         platforms = map.createLayer('Platforms');
-        platforms.background.resizeWorld();
-        collision = map.createLayer('Collision');
-        collision.resizeWorld();
+        platforms.debug = true;
+        platforms.resizeWorld();
+    //    collision = map3.createLayer('Collision');
+    //    collision.resizeWorld(); */
+        
+        map.setCollisionBetween(1, 1000, true, 'Platforms');
         
         reunited = game.add.audio('reunited');
         reunited.loop = true;
         reunited.play();
         
-        game.add.sprite(0,0, 'foggySky');
-        //game.stage.backgroundColor = '#2d2d2d';
+    //    game.add.sprite(0,0, 'foggySky');
+    //    game.stage.backgroundColor = '#2d2d2d';
         
         /*platforms = game.add.group();
         platforms.enableBody = true;
@@ -135,7 +146,7 @@ window.onload = function()
         } */
         
         //  Allow the player to jump if they are touching the ground.
-        if (game.input.keyboard.isDown(Phaser.Keyboard.UP) /*&& girl.body.touching.down*/)
+        if (game.input.keyboard.isDown(Phaser.Keyboard.UP) && girl.body.touching.down)
         {
             girl.body.velocity.y = -350;
         } 
