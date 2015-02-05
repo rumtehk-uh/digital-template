@@ -62,7 +62,8 @@ window.onload = function()
         background = map2.createLayer('Background');
         background.resizeWorld();
         platforms = map.createLayer('Platforms');
-        platforms.debug = true;
+        //This debug code makes the colliders green
+    //    platforms.debug = true;
         platforms.resizeWorld();
     //    collision = map3.createLayer('Collision');
     //    collision.resizeWorld(); */
@@ -104,6 +105,21 @@ window.onload = function()
         //game.camera.deadzone = new Phaser.Rectangle(100, 100, 600, 400);
         jumped = true;
     }
+    
+    //find objects in a Tiled layer that containt a property called "type" equal to a certain value
+      findObjectsByType: function(type, map, layer) {
+        var result = new Array();
+        map.objects[layer].forEach(function(element){
+          if(element.properties.type === type) {
+            //Phaser uses top left, Tiled bottom left so we have to adjust the y position
+            //also keep in mind that the cup images are a bit smaller than the tile which is 16x16
+            //so they might not be placed in the exact pixel position as in Tiled
+            element.y -= map.tileHeight;
+            result.push(element);
+          }      
+        });
+        return result;
+      },
 
     
     function update() 
