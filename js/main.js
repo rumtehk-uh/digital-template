@@ -102,6 +102,7 @@ window.onload = function()
         //girl.anchor.setTo(.5, .5);
 
         //game.camera.deadzone = new Phaser.Rectangle(100, 100, 600, 400);
+        jumped = true;
     }
 
     
@@ -137,7 +138,9 @@ window.onload = function()
             girl.body.velocity.y = -300;
         } */
         
-        //  Allow the player to jump if they are touching the ground.
+        
+        //  Allow the player to jump if they are touching the ground and have lifted the jump key since last jump
+        //cause spamming jump by holding the button isn't cool
         if (game.input.keyboard.isDown(Phaser.Keyboard.UP) && girl.body.onFloor())
         {
             girl.body.velocity.y = -350;
