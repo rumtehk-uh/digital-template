@@ -53,10 +53,10 @@ window.onload = function()
         map2.addTilesetImage('Sky', 'foggySky');
     //    map3.addTilesetImage('Brick', 'brick');
         
-        map.setCollisionBetween(0, 8);
+       /* map.setCollisionBetween(0, 8);
         map.setCollisionBetween(20, 25);
         map.setCollisionBetween(27, 29);
-        map.setCollision(0);
+        map.setCollision(0); */
         
         //sets up the layers of the filemap
         background = map2.createLayer('Background');
@@ -67,6 +67,7 @@ window.onload = function()
     //    collision = map3.createLayer('Collision');
     //    collision.resizeWorld(); */
         
+        //sets the platforms layer too all be colliders
         map.setCollisionBetween(1, 1000, true, 'Platforms');
         
         reunited = game.add.audio('reunited');
@@ -76,15 +77,6 @@ window.onload = function()
     //    game.add.sprite(0,0, 'foggySky');
     //    game.stage.backgroundColor = '#2d2d2d';
         
-        /*platforms = game.add.group();
-        platforms.enableBody = true;
-        var ground = platforms.create(0,game.world.height - 64, 'plainBrick');
-        ground.scale.setTo(.5,.5);
-        ground.body.immovable = true;
-        
-        var ledge = platforms.create(400, 400, 'plainBrick');
-        ledge.scale.setTo(.25,.25);
-        ledge.body.immovable = true;*/
         
         girl = game.add.sprite(32, game.world.height - 150, 'girlChar');
         game.physics.arcade.enable(girl);
