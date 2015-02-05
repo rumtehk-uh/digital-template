@@ -170,7 +170,7 @@ window.onload = function()
             {
                 girl.body.gravity.y = -400;
             }
-            else
+            else if(girl.body.gravity.y = -400)
             {
                 girl.body.gravity.y = 400
             }
