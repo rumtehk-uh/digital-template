@@ -97,6 +97,7 @@ window.onload = function()
 
       //  girl.body.gravity.y = 300;
        // cursors = game.input.keyboard.createCursorKeys();
+       game.input.keyboard.addKeyCapture([Phaser.Keyboard.SPACEBAR]);
         
         girl.anchor.setTo(.5, .5);
         game.camera.follow(girl);
@@ -160,6 +161,11 @@ window.onload = function()
         if (game.input.keyboard.isDown(Phaser.Keyboard.UP) && girl.body.onFloor())
         {
             girl.body.velocity.y = -350;
+        }
+        
+        if (game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR) && girl.body.onFloor())k
+        {
+            girl.body.gravity.y = -400;
         } 
              
      }
