@@ -19,7 +19,7 @@ window.onload = function()
     var girl;
     var brick;
     var walkSpeed = 150;
-    var jumped = true;
+    var jumped;
     var reunited;
     var map;
     var map2;
@@ -103,6 +103,7 @@ window.onload = function()
         //girl.anchor.setTo(.5, .5);
 
         //game.camera.deadzone = new Phaser.Rectangle(100, 100, 600, 400);
+        jumped = true;
     }
 
     
