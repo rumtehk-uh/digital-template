@@ -34,7 +34,7 @@ window.onload = function()
         game.load.image('plainBrick', 'assets/brickPlatform.png');
         game.load.image('foggySky', 'assets/foggyBackground.png');
         game.load.image('brick', 'assets/Brick.png');
-        game.load.tilemap('map', 'assets/iKnowYou.json', null, Phaser.Tilemap.TILED_JSON);
+      //  game.load.tilemap('map', 'assets/iKnowYou.json', null, Phaser.Tilemap.TILED_JSON);
         
         game.load.audio('reunited', 'assets/Reunited1.mp3');
     }
